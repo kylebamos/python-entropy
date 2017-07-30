@@ -1,12 +1,13 @@
-from nose.tools import *
+import unittest
+
 from six import b
 
 from entropy import shannon_entropy
 
 
-class TestShannonEntropy(object):
+class TestShannonEntropy(unittest.TestCase):
     def assert_entropy(self, data, expected):
-        assert_almost_equal(shannon_entropy(data), expected, places=3)
+        self.assertAlmostEqual(shannon_entropy(data), expected, places=3)
 
     def test_0(self):
         self.assert_entropy(b('\x00') * 1024, 0.0)

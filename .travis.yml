@@ -1,11 +1,10 @@
 language: "python"
 python:
-    - "2.6"
     - "2.7"
-    - "3.2"
-    - "3.3"
+    - "3.4"
+    - "3.5"
+    - "3.6"
     - "pypy"
 install:
     - "pip install --use-mirrors ."
-    - "pip install --use-mirrors -r ./test_requirements.txt"
-script: "./setup.py nosetests --verbosity=2"
+script: "./setup.py test -v"
