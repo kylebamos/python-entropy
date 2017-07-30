@@ -3,7 +3,6 @@
 
 #include <math.h>
 #include <stdlib.h>
-#include <string.h>
 
 
 static PyObject	*shannon_entropy(PyObject *, PyObject *);
@@ -70,7 +69,6 @@ shannon_entropy(PyObject *self, PyObject *args)
 
 	if (!(counts = calloc(256, sizeof(*counts))))
 		return (PyErr_NoMemory());
-	memset(counts, '\0', sizeof(*counts) * 256);
 
 	for (i = 0; i < n; i++)
 		counts[(unsigned char)data[i]] += 1;
